@@ -1,0 +1,19 @@
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+thead tr{
+    background-color: #141d57;
+    // background-color: #5b5d61;
+    color: #ffffff;
+}
+
+td{
+    padding: 5px;
+
+}
+
+tbody tr:nth-child(odd){
+    background-color: #bdbdbd;
+}
