@@ -1,6 +1,6 @@
 import {useState} from 'react';
 
-export default (initState=[], fields=[])=>{
+export default (initState=[])=>{
     const [value, setValue] = useState('');
     const [results, setResults] = useState(initState);
 
@@ -18,7 +18,6 @@ export default (initState=[], fields=[])=>{
 
     const setCriteria=(event)=>{
         const val = event.target.value;
-        const name = event.target.name;
         setValue(val);
         filter(val);
     }

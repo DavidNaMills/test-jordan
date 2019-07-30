@@ -1,7 +1,9 @@
 import React from 'react';
-import { ColumnChart} from 'react-chartkick'
+import { ColumnChart} from 'react-chartkick';
 import 'chart.js'
 import {IndividualDetail} from './AllDetails';
+import {calculateRating, generateChartData} from './helperFunctions';
+
 
 const detailedDisplay=[
     {label: 'Name', value:'name'},
@@ -30,24 +32,10 @@ const style={
     }
 }
 
-export const RecordDetails=({record})=>{
-    
-    const calculateRating=()=>{
-        const temp = chartDisplay.reduce((ttl, x)=>(+ttl)+(+record.compliance.fields[x]), 0);
-        return temp;
-    }
-
-    const generateChartData=()=>{
-        const data = chartDisplay.map(x=>{ return [x, record.compliance.fields[x]]});
-        return data;
-    }
-
-    return (
+export const RecordDetails=({record})=>(
         <div>
             <div>{detailedDisplay.map(x=><IndividualDetail key={x.label} label={x.label} value={record[x.value]}/>)}</div>
-            <div style={style.header}> <div><h3>Compliance Rating: {`${calculateRating()} / 600`}</h3></div></div>
-            <div style={style.chart}><ColumnChart data={generateChartData()} stacked={true}/></div>
+            <div id='rd-1' style={style.header}> <div><h3 id='test-compliance'>Compliance Rating: {`${calculateRating(chartDisplay, record)} / 600`}</h3></div></div>
+            <div id='rd-2' style={style.chart}><ColumnChart data={generateChartData(chartDisplay, record)} stacked={true}/></div>
         </div>
-    )
-}
-{/* <div><AllDetails record={record}/></div> */}
+)
