@@ -32,7 +32,7 @@ const styles={
     }
 }
 
-export const Button=({type='default', onClick, label, isFull=false})=>{
+export const Button=({type='default', onClick=()=>{}, label='', isFull=false})=>{
 
     const getStyles=()=>{
         if(isFull){
@@ -43,6 +43,6 @@ export const Button=({type='default', onClick, label, isFull=false})=>{
     }
 
     return (
-        <button style={getStyles()} onClick={onClick}>{label}</button>
+        <button id='test-btn1' style={getStyles()} onClick={onClick}>{label}</button>
     )
 }

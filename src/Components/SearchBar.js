@@ -11,7 +11,7 @@ const style={
 export const SearchBar=({value, setCriteria})=>{
     return (
         <div>
-            <input type='text' name='search' value={value} onChange={(event)=>{setCriteria(event)}} style={style.input}/>
+            <input type='text' id='test-search' name='search' value={value} onChange={(event)=>{setCriteria(event)}} style={style.input}/>
         </div>
     )
 }

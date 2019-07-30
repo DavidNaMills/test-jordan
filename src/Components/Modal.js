@@ -32,12 +32,12 @@ const style={
 export const Modal = ({Component, isOpen=false, controlModal, id})=>{
 
     return (
-        <div>
+        <div id='test-main'>
             {isOpen&&
-            <div style={style.back}>
-                <div style={style.modal}>
+            <div id='test-outer' style={style.back}>
+                <div id='test-modal' style={style.modal}>
                     <p><Button type={'default'} label={'Close'} onClick={()=>controlModal(id)} isFull={true}/></p>
-                    <div style={style.inner}>
+                    <div id='test-inner' style={style.inner}>
             {<Component />}
                     </div>
                     <p><Button type={'default'} label={'Close'} onClick={()=>controlModal(id)} isFull={true}/></p>
