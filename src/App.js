@@ -30,7 +30,7 @@ const defaultState={
 };
 
 
-function App() {
+export default ()=>{
   const [state, setState] = useState(defaultState);
   const {value, setCriteria, results} = useSearch(json.rows);
 
@@ -56,7 +56,7 @@ function App() {
               id={'displayDetails'}
             />
             <SearchBar value={value} setCriteria={setCriteria} />
-            <div style={style}>
+            <div id='test-searchInfo' style={style}>
               <h3>{results.length>0?`${results.length} records found`:'No records match criteria'}</h3>
               <h3>Click on row for more details</h3>
             </div>
@@ -65,5 +65,3 @@ function App() {
       </div>
   );
 }
-
-export default App;
